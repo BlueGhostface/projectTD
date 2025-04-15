@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxsvln0xiugh"]
+[gd_scene load_steps=4 format=3 uid="uid://0emrq028672m"]
 
-[ext_resource type="Texture2D" uid="uid://b4cdq6ay6m0dd" path="res://icon.svg" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://crdf3n0f7q3k8" path="res://scripts/Player.cs" id="1_g2els"]
+[ext_resource type="Script" uid="uid://crdf3n0f7q3k8" path="res://scripts/Player.cs" id="1_ybq8a"]
+[ext_resource type="Texture2D" uid="uid://b4cdq6ay6m0dd" path="res://icon.svg" id="2_ulq6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 2.14286
 height = 20.0
 
 [node name="player" type="CharacterBody2D"]
-script = ExtResource("1_g2els")
+script = ExtResource("1_ybq8a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.0392157, 0.0823529, 1)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_3vyb7")
+texture = ExtResource("2_ulq6r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1.42108e-14, 16)
