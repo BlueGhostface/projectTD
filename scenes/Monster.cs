@@ -75,6 +75,7 @@ public partial class Monster : CharacterBody2D
 			cur_walk_state = WALK_STATE.IDLE;
             GD.Print("IDLE");
             timer.Start(idletime);
+			
 		}
 	}
 
