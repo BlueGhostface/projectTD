@@ -1,6 +1,5 @@
 using Godot;
 using System;
-using System.Diagnostics;
 
 public partial class Monster : CharacterBody2D
 {
@@ -45,15 +44,15 @@ public partial class Monster : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		if (cur_walk_state == WALK_STATE.WALK)
-        {
-            Velocity = direction * MoveSpeed;
-        }
-        else
-        {
-            Velocity = Vector2.Zero;
-        }
+		{
+			Velocity = direction * MoveSpeed;
+		}
+		else
+		{
+			Velocity = Vector2.Zero;
+		}
 
-        MoveAndSlide();
+		MoveAndSlide();
 	}
 
 	public void change_walkstate()
@@ -64,18 +63,20 @@ public partial class Monster : CharacterBody2D
 		{
 			cur_walk_state = WALK_STATE.WALK;
 			direction = new Vector2(
-                (float)(rand.NextDouble() * 2 - 1),
-                (float)(rand.NextDouble() * 2 - 1)
-            ).Normalized();
+				(float)(rand.NextDouble() * 2 - 1),
+				(float)(rand.NextDouble() * 2 - 1)
+			).Normalized();
 			Console.WriteLine("inner change_walkstate" + cur_walk_state);
 
 			timer.Start(walktime);
 
-		}else{
+		}
+		else
+		{
 			cur_walk_state = WALK_STATE.IDLE;
-            GD.Print("IDLE");
-            timer.Start(idletime);
-			
+			GD.Print("IDLE");
+			timer.Start(idletime);
+
 		}
 	}
 

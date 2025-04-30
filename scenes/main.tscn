@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dq3mxdq0tbul"]
+[gd_scene load_steps=10 format=4 uid="uid://dq3mxdq0tbul"]
 
 [ext_resource type="Script" uid="uid://cdlo6ilgis7um" path="res://scenes/Main.cs" id="1_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://uk43f2jigqly" path="res://assets/water iso.png" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://bjcdlv7p51qew" path="res://assets/newbricks.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dxsvln0xiugh" path="res://scenes/player.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://0emrq028672m" path="res://scenes/Monster.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://cpqxyrbn75vg5" path="res://scenes/pet_1.tscn" id="6_tefeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyhfs"]
 texture = ExtResource("1_o5qli")
@@ -56,8 +57,12 @@ tile_map_data = PackedByteArray("AAAAAP//AgADAAIAAAABAP//AgADAAIAAAAAAAAAAgADAAI
 tile_set = SubResource("TileSet_tbgi4")
 
 [node name="player" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(670, 376)
+position = Vector2(665, 458)
+
+[node name="Pet1" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(776, 229)
+Target_path = NodePath("../player")
+target_distance = 100.0
 
 [node name="Monster" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(699, 576)
-idletime = 0.0
+position = Vector2(885, 457)

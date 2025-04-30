@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class Player : CharacterBody2D
 {
@@ -25,7 +26,7 @@ public partial class Player : CharacterBody2D
 
 		Velocity = isoDirection.Normalized() * movespeed;
 
-		MoveAndSlide();
+		MoveAndCollide(Velocity.Normalized());
         base._PhysicsProcess(delta);
 
 
@@ -34,6 +35,10 @@ public partial class Player : CharacterBody2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
+		var inputBuffer = new Godot.Collections.Array<Vector2>();
+		inputBuffer.LastOrDefault();
+
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
